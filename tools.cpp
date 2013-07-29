@@ -5,8 +5,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////
 bool generateEntities(entitySet &targetSet)
 {
-
-
+    
     for(int i = 0; i < 2; ++i)
     {
         targetSet.insert(new animal);
