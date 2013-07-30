@@ -10,6 +10,8 @@ The main actor in this simulation
 
 class animal : public entity
 {
+    int energy;
+    int undisgestedFood;
     genome animalGenome;
 public:
     animal();

@@ -14,19 +14,12 @@ TODO:
 
 int main()
 {
-
-    std::ofstream logReport;
-
-    logReport.open("logFile.txt");
-
     //How long to run the simulation
-    const int runLength = 20;
+    const int runLength = 200;
     bool status = false;
 
     //Create a set of entities
     entitySet mainEntitySet;
-
-    LOGREPORT("Brains" << "Zombies");
 
     //Populate the set
     status = generateEntities(mainEntitySet);
@@ -47,8 +40,5 @@ int main()
         }
     }
 
-    logReport.close();
-
     return status;
-
 }

@@ -5,12 +5,12 @@
 
 class food : public entity
 {
-    int value;
+    int foodValue, maxFoodValue;
 public:
     food();
     void update();
-    void update(entitySet collodingEntitySet);
-    int getValue() { return value; }
+    void update(entitySet collidingEntitySet);
+    int getFoodValue() { return maxFoodValue; }
 };
 
 #endif /*FOOD_H*/

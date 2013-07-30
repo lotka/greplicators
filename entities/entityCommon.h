@@ -11,17 +11,14 @@
 #include "position.h"
 #include "genome.h"
 
-int const SPACE_DIMENSIONS = 1;
-int const WORLD_SIZE = 2;
+int const SPACE_DIMENSIONS = 4;
+int const WORLD_SIZE = 10;
 
-#define DISTRIBUTION_POSITION 0
+#define DISTRIBUTION_DIRECTION 0
 #define DISTRIBUTION_BINARY 1
 #define DISTRIBUTION_GENOME 2
-
-
-#define LOGREPORT(MSG) std::cout << MSG << std::endl;
-#define LOGDEBUG(MSG) logReport << MSG << std::endl;
-#define LOGBOTH(MSG) logReport << MSG << std::endl; std::cout << MSG << std::endl;
+#define DISTRIBUTION_ANIMAL 3
+#define DISTRIBUTION_WORLD_POSITION 4
 
 //Forward declaration of entity
 class entity;

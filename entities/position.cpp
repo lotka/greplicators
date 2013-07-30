@@ -7,6 +7,12 @@
 position::position()
 {
     positionVector.resize(SPACE_DIMENSIONS);
+
+    for(int i = 0; i < positionVector.size(); ++i)
+    {
+        positionVector[i] = getValueFromDistribution(DISTRIBUTION_WORLD_POSITION);
+    }
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -30,30 +36,22 @@ void position::setPosition(std::vector<int> &otherPositionVector)
 ////////////////////////////////////////////////////////////////////////////////////////
 void position::moveRandom()
 {
-    int direction = getValueFromDistribution(DISTRIBUTION_POSITION);
+    int direction = getValueFromDistribution(DISTRIBUTION_DIRECTION);
 
     if(getValueFromDistribution(DISTRIBUTION_BINARY))
     {
-        //std::cout << "Move forward" << std::endl;
-        if( abs(positionVector[direction]+1) == WORLD_SIZE )
+        ++positionVector[direction];
+        if( abs(positionVector[direction]+1) >= WORLD_SIZE )
         {
             positionVector[direction]= -WORLD_SIZE + 1;
-        }
-        else
-        {
-            ++positionVector[direction];
         }
     }
     else
     {
-        //std::cout << "Move backwards" << std::endl;
-        if( abs(positionVector[direction]-1) == WORLD_SIZE )
+        --positionVector[direction];
+        if( abs(positionVector[direction]-1) >= WORLD_SIZE )
         {
             positionVector[direction]= WORLD_SIZE - 1;
-        }
-        else
-        {
-            --positionVector[direction];
         }
     }
 }

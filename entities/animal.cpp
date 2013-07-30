@@ -1,4 +1,5 @@
 #include "animal.h"
+#include "../tools.h"
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // constructor
@@ -6,6 +7,7 @@
 animal::animal()
 {
     //std::cout << std::endl << "Animal created";
+    energy = 100;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -23,12 +25,21 @@ void animal::update(entitySet collodingEntitySet)
 {
     ++age;
 
-  /*  std::cout << "(";
+    if(energy < 0 )
+    {
+       std::cout << "Animal died of starvation" << std::endl;
+       delete this;
+    }
+
+/*  std::cout << "(";
     for(int i = 0; i < SPACE_DIMENSIONS; ++i)
     {
         std::cout << currentPosition[i] << ",";
     }
     std::cout << ")" << std::endl;
+
 */
+
+    --energy;
     currentPosition.moveRandom();
 }
