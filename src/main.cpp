@@ -30,8 +30,6 @@ int main()
     }
 
 
-      std::cout << "asda" << std::endl;
-
     //Enter main loop
     for(int i = 0; i < runLength; ++i)
     {
