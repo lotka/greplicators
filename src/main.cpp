@@ -36,7 +36,7 @@ int main()
         //Preform operations on entities
         for(entitySet::iterator it = mainEntitySet.begin(); it != mainEntitySet.end(); it++)
         {
-            //run the update function of each entity, passing copies of any entities that happen to occupy the same position
+            //run the update function of each entity, passing pointers to entities that happen to occupy the same position
             (*it)->update(getCollidingEntities(it,mainEntitySet));
         }
     }
