@@ -37,7 +37,11 @@ int main()
         for(entitySet::iterator it = mainEntitySet.begin(); it != mainEntitySet.end(); it++)
         {
             //delete the entity if it has expired
-            deleteEntity(*it,mainEntitySet);
+            if( (*it)->alive() )
+            {
+                mainEntitySet.erase(it);
+                continue;
+            }
             //run the update function of each entity, passing pointers to entities that happen to occupy the same position
             (*it)->update(getCollidingEntities(it,mainEntitySet));
         }
