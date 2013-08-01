@@ -36,6 +36,8 @@ int main()
         //Preform operations on entities
         for(entitySet::iterator it = mainEntitySet.begin(); it != mainEntitySet.end(); it++)
         {
+            //delete the entity if it has expired
+            deleteEntity(*it,mainEntitySet);
             //run the update function of each entity, passing pointers to entities that happen to occupy the same position
             (*it)->update(getCollidingEntities(it,mainEntitySet));
         }
