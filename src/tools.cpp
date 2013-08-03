@@ -8,7 +8,9 @@ bool generateEntities(entitySet &targetSet)
 
     for(int i = 0; i < 1; ++i)
     {
+        targetSet.insert(new food);
         targetSet.insert(new animal);
+        targetSet.insert(new food);
     }
 
     return true;
@@ -22,7 +24,6 @@ entitySet getCollidingEntities(entitySet::iterator current, entitySet &reference
 
     for(entitySet::iterator it = referenceSet.begin(); it != referenceSet.end(); it++)
     {
-
         if(it == current )
         {
             continue;

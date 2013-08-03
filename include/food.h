@@ -5,6 +5,7 @@
 
 class food : public entity
 {
+    genome theGenome;
     int foodValue, maxFoodValue;
 public:
     food();

@@ -1,12 +1,5 @@
-/*
-TODO:
---Get rid of duplication of code for the age increment
-
-
-*/
-
-
 #include <iostream>
+#include <queue>
 #include "entityCommon.h"
 #include "animal.h"
 #include "food.h"
@@ -29,23 +22,30 @@ int main()
         return false;
     }
 
-
     //Enter main loop
     for(int i = 0; i < runLength; ++i)
     {
         //Preform operations on entities
         for(entitySet::iterator it = mainEntitySet.begin(); it != mainEntitySet.end(); it++)
         {
-            //delete the entity if it has expired
-            if( (*it)->alive() )
+          //delete the entity if it has expired
+	  if( ! ( (*it)->alive() ) )
             {
-                mainEntitySet.erase(it);
+	        //Temporary pointer to deletion target
+      	        delete *it;
+		mainEntitySet.erase(it);
+                --it;
                 continue;
             }
-            //run the update function of each entity, passing pointers to entities that happen to occupy the same position
-            (*it)->update(getCollidingEntities(it,mainEntitySet));
+
+            //run the update function of each entity
+	    //passing a set of pointers to colliding objects
+            (*it)->update( getCollidingEntities( it , mainEntitySet ) );
         }
     }
+
+    std::cout << "##Final Stats##" << std::endl << "Objects still alive: " << mainEntitySet.size();
+    std::cout << " after: " << runLength << " turns." << std::endl;
 
     return status;
 }

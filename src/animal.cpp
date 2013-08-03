@@ -8,6 +8,7 @@ animal::animal()
 {
     //std::cout << std::endl << "Animal created";
     energy = 100;
+    hp = 100;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -24,21 +25,22 @@ void animal::update()
 void animal::update(entitySet collodingEntitySet)
 {
     ++age;
+    --energy;
 
     if(energy < 0 )
     {
+       hp = 0;
        std::cout << "Animal died of starvation" << std::endl;
-       delete this;
     }
 
-/*  std::cout << "(";
+    /*  std::cout << "(";
     for(int i = 0; i < SPACE_DIMENSIONS; ++i)
     {
         std::cout << currentPosition[i] << ",";
     }
     std::cout << ")" << std::endl;
-
 */
+
 
     --energy;
     currentPosition.moveRandom();

@@ -7,7 +7,8 @@
 food::food()
 {
    maxFoodValue = 100;
-   foodValue = 100;
+   foodValue    = 100;
+   hp           = 100;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -32,5 +33,12 @@ void food::update(entitySet collidingEntitySet)
     if(foodValue < 0)
     {
         std::cout << "A food was depleted" << std::endl;
+    }
+
+
+    for(entitySet::iterator it = collidingEntitySet.begin(); it != collidingEntitySet.end(); it++)
+    {
+      //(*it)->seed(theGenome);
+      //TODO
     }
 }

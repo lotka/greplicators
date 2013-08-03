@@ -42,9 +42,23 @@ public:
     virtual void update(entitySet collodingEntitySet) = 0;
     virtual void render();
     position getPosition();
+
+    /*! comparePositionWith
+     *
+     * @param entity : 
+     * @return 
+     */
     int comparePositionWith(entity &other);
+
+
+    /*! alive : check for life
+     *
+     * @return bool : life signs
+     */
+    bool alive();
 protected:
     int age;
+    int hp;
     position currentPosition;
     genome theGenome;
 };

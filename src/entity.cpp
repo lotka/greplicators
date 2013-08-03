@@ -28,6 +28,26 @@ int entity::comparePositionWith(entity &other)
     return true;
 }
 
+
+////////////////////////////////////////////////
+// alive
+////////////////////////////////////////////////
+bool entity::alive()
+{
+  if( hp < 1 )
+  {
+    //Dead (So that main.cpp knows to remove it from the list)
+    std::cout << "hp < 1" << std::endl;
+    return false;
+  }
+  else
+  {
+      //Still alive
+      return true;
+  }
+
+}
+
 ////////////////////////////////////////////////
 // getPosition
 ////////////////////////////////////////////////
@@ -35,6 +55,8 @@ position entity::getPosition()
 {
     return this->currentPosition;
 }
+
+
 
 genome::genome()
 {

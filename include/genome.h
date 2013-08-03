@@ -12,8 +12,6 @@ class genome
 
 public:
 
-    static std::default_random_engine * generator;
-
     genome();
 
     float getSimilarity(genome &a, genome &b);
