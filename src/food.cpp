@@ -7,9 +7,9 @@
 food::food()
 {
    type         =   2;
-   maxFoodValue = 100;
+   maxFoodValue = 1000;
    foodValue    = 100;
-   foodTransfer =   1;
+   foodTransfer =  2000;
    hp           = 100;
 }
 

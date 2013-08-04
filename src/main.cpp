@@ -12,8 +12,8 @@ int main()
     bool status = false;
 
     //Initial conditions
-    double animalDensity = 0.5;
-    double foodDensity = 0.5;
+    double animalDensity = 0.2;
+    double foodDensity = 1;
 
     //Create a set of entities
     entitySet mainEntitySet;

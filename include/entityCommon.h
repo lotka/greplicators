@@ -11,21 +11,27 @@
 #include "position.h"
 #include "genome.h"
 
-int const SPACE_DIMENSIONS = 2;
-int const WORLD_SIZE = 3;
+//World geometry
+int const SPACE_DIMENSIONS = 3;
+int const WORLD_SIZE = 2;
 
-#define DISTRIBUTION_DIRECTION 0
-#define DISTRIBUTION_BINARY 1
-#define DISTRIBUTION_GENOME 2
-#define DISTRIBUTION_ANIMAL 3
+//Probability distribution
+#define DISTRIBUTION_DIRECTION      0
+#define DISTRIBUTION_BINARY         1
+#define DISTRIBUTION_GENOME         2
+#define DISTRIBUTION_ANIMAL         3
 #define DISTRIBUTION_WORLD_POSITION 4
+
+//Object types enumerated
+#define TYPE_ENTITY   0
+#define TYPE_ANIMAL   1
+#define TYPE_FOOD     2
+#define TYPE_PARASITE 3
 
 //Forward declaration of entity
 class entity;
 
-
 typedef std::set<entity *> entitySet;
-
 
 /*! Entity
  *

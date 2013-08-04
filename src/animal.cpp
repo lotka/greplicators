@@ -45,7 +45,7 @@ void animal::update(entitySet collidingEntitySet)
          case 1:
          (*it)->fight();
          case 2:
-	 (*it)->eat();
+	 energy += (*it)->eat();
       }      
     }
   }
