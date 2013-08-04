@@ -15,7 +15,7 @@ TARGET   = greplicators
 
 CC       = g++
 # compiling flags here
-CFLAGS   = -std=c++0x -Iinclude/.
+CFLAGS   = -std=c++0x -Iinclude/. -pedantic -pedantic-errors
 
 LINKER   = g++ -o
 # linking flags here

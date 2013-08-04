@@ -8,18 +8,22 @@
 int main()
 {
     //How long to run the simulation
-    const int runLength = 200;
+    const int runLength = 2000000;
     bool status = false;
+
+    //Initial conditions
+    double animalDensity = 0.5;
+    double foodDensity = 0.5;
 
     //Create a set of entities
     entitySet mainEntitySet;
 
     //Populate the set
-    status = generateEntities(mainEntitySet);
+    status = generateEntities(mainEntitySet,animalDensity,foodDensity);
     if(status == false)
     {
         std::cout << "Failed to generate the starting eviorment and population" << std::endl;
-        return false;
+        return status;
     }
 
     //Enter main loop

@@ -11,8 +11,8 @@
 #include "position.h"
 #include "genome.h"
 
-int const SPACE_DIMENSIONS = 4;
-int const WORLD_SIZE = 10;
+int const SPACE_DIMENSIONS = 2;
+int const WORLD_SIZE = 3;
 
 #define DISTRIBUTION_DIRECTION 0
 #define DISTRIBUTION_BINARY 1
@@ -40,6 +40,8 @@ public:
      * @return void :
      */
     virtual void update(entitySet collodingEntitySet) = 0;
+
+    /* */
     virtual void render();
     position getPosition();
 
@@ -56,7 +58,17 @@ public:
      * @return bool : life signs
      */
     bool alive();
+
+
+    /*! alive : check for life
+     *
+     * @return bool : life signs
+     */
+    int getType() { return type; }
+
 protected:
+    //0 Pure entity, 1 Animal, 2 Food, 3 Parasite
+    int type;
     int age;
     int hp;
     position currentPosition;

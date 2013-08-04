@@ -10,7 +10,7 @@
  *
  *  @return bool status
  */
-bool generateEntities(entitySet &targetSet);
+bool generateEntities(entitySet &targetSet, double animalDensity, double foodDensity);
 
 /*! getCollidingEntites
  *

@@ -6,7 +6,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////
 animal::animal()
 {
-    //std::cout << std::endl << "Animal created";
+    type = 1;
     energy = 100;
     hp = 100;
 }
@@ -16,24 +16,17 @@ animal::animal()
 ////////////////////////////////////////////////////////////////////////////////////////
 void animal::update()
 {
+    --energy;
 
-}
-
-////////////////////////////////////////////////////////////////////////////////////////
-// update
-////////////////////////////////////////////////////////////////////////////////////////
-void animal::update(entitySet collodingEntitySet)
-{
     ++age;
-    --energy;
 
-    if(energy < 0 )
+    if(energy <= 0 )
     {
        hp = 0;
        std::cout << "Animal died of starvation" << std::endl;
     }
 
-    /*  std::cout << "(";
+/*  std::cout << "(";
     for(int i = 0; i < SPACE_DIMENSIONS; ++i)
     {
         std::cout << currentPosition[i] << ",";
@@ -41,7 +34,45 @@ void animal::update(entitySet collodingEntitySet)
     std::cout << ")" << std::endl;
 */
 
-
-    --energy;
-    currentPosition.moveRandom();
 }
+
+////////////////////////////////////////////////////////////////////////////////////////
+// update
+////////////////////////////////////////////////////////////////////////////////////////
+void animal::update(entitySet collidingEntitySet)
+{
+  //Do updates which don't depend on the situation
+  update();
+
+  if(collidingEntitySet.size() != 0)
+  {
+    for(entitySet::iterator it = collidingEntitySet.begin(); it != collidingEntitySet.end(); ++it)
+      {
+	if( ((*it)->getType())==2 )
+	  ++energy;
+	  } 
+  }
+  else
+  {
+     currentPosition.moveRandom();
+  }
+
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+// makeAPlan
+////////////////////////////////////////////////////////////////////////////////////////
+/*plan animal::makeAPlan()
+{
+  plan tmp;
+  tmp.eat = 0;
+  tmp.movement=1;
+  tmp.attack=2;
+  tmp.mate=3;
+  tmp.rest=4;
+
+  return temp;
+}
+*/

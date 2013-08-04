@@ -1,17 +1,29 @@
 #include "tools.h"
-
+#include <cmath>
+ 
 ////////////////////////////////////////////////////////////////////////////////////////
 // generateEntities
 ////////////////////////////////////////////////////////////////////////////////////////
-bool generateEntities(entitySet &targetSet)
+bool generateEntities(entitySet &targetSet, double animalDensity, double foodDensity)
 {
 
-    for(int i = 0; i < 1; ++i)
+    const double area = pow((double) ( WORLD_SIZE + WORLD_SIZE - 1 ),(double) SPACE_DIMENSIONS );
+    const double animalNumber = area * animalDensity;
+    const double foodNumber = area * foodDensity;
+
+    std::cout << "World area =  " << area << std::endl;
+    std::cout << "Generating " << (int)animalNumber << " animals and " << (int)foodNumber << " food entites" << std::endl;
+
+    for(int i = 0; i < (int)animalNumber; ++i)
+    {
+        targetSet.insert(new animal);
+    }
+      
+    for(int i = 0; i < (int)foodNumber; ++i)
     {
         targetSet.insert(new food);
-        targetSet.insert(new animal);
-        targetSet.insert(new food);
     }
+
 
     return true;
 }

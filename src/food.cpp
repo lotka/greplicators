@@ -6,6 +6,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////
 food::food()
 {
+   type = 2;
    maxFoodValue = 100;
    foodValue    = 100;
    hp           = 100;
@@ -41,4 +42,6 @@ void food::update(entitySet collidingEntitySet)
       //(*it)->seed(theGenome);
       //TODO
     }
+
 }
+
