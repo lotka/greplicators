@@ -8,9 +8,12 @@ Currently implmented:
 * Moving randomly
 * Collision detection
 
-In progress:
-* Mating
+Implemented at the most basic level
 * Fighting
 * Eating
+
+In progress:
+* Mating
+* Genetics
 * Parasites
 * Mutation
