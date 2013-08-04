@@ -43,6 +43,8 @@ public:
 
     /* */
     virtual void render();
+    virtual int eat() = 0;
+    virtual void fight() = 0;
     position getPosition();
 
     /*! comparePositionWith
@@ -77,4 +79,3 @@ protected:
 
 
 #endif /* ENTITY_H */
-

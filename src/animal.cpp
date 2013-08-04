@@ -6,9 +6,9 @@
 ////////////////////////////////////////////////////////////////////////////////////////
 animal::animal()
 {
-    type = 1;
-    energy = 100;
-    hp = 100;
+    type    = 1;
+    energy  = 100;
+    hp      = 100;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -25,15 +25,6 @@ void animal::update()
        hp = 0;
        std::cout << "Animal died of starvation" << std::endl;
     }
-
-/*  std::cout << "(";
-    for(int i = 0; i < SPACE_DIMENSIONS; ++i)
-    {
-        std::cout << currentPosition[i] << ",";
-    }
-    std::cout << ")" << std::endl;
-*/
-
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -47,10 +38,16 @@ void animal::update(entitySet collidingEntitySet)
   if(collidingEntitySet.size() != 0)
   {
     for(entitySet::iterator it = collidingEntitySet.begin(); it != collidingEntitySet.end(); ++it)
+    {
+      int type = (*it)->getType();
+      switch(type)
       {
-	if( ((*it)->getType())==2 )
-	  ++energy;
-	  } 
+         case 1:
+         (*it)->fight();
+         case 2:
+	 (*it)->eat();
+      }      
+    }
   }
   else
   {
@@ -59,7 +56,17 @@ void animal::update(entitySet collidingEntitySet)
 
 }
 
-
+////////////////////////////////////////////////////////////////////////////////////////
+// fight
+////////////////////////////////////////////////////////////////////////////////////////
+void animal::fight()
+{
+  --hp;
+  if(hp==0)
+  {
+    std::cout << "An animal was killed in a fight" << std::endl;
+  }
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // makeAPlan

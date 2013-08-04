@@ -1,14 +1,15 @@
 #include "food.h"
 #include <cmath>
-
+ 
 ////////////////////////////////////////////////////////////////////////////////////////
 // constructor
 ////////////////////////////////////////////////////////////////////////////////////////
 food::food()
 {
-   type = 2;
+   type         =   2;
    maxFoodValue = 100;
    foodValue    = 100;
+   foodTransfer =   1;
    hp           = 100;
 }
 
@@ -36,12 +37,27 @@ void food::update(entitySet collidingEntitySet)
         std::cout << "A food was depleted" << std::endl;
     }
 
-
     for(entitySet::iterator it = collidingEntitySet.begin(); it != collidingEntitySet.end(); it++)
     {
       //(*it)->seed(theGenome);
       //TODO
     }
-
 }
 
+
+////////////////////////////////////////////////////////////////////////////////////////
+// eat
+////////////////////////////////////////////////////////////////////////////////////////
+int food::eat()
+{
+  if( foodValue > 0 )
+  {
+    foodValue -= foodValue;
+    return foodTransfer;
+  }
+  else
+  {
+    --maxFoodValue;
+    return 0;
+  }
+}

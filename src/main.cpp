@@ -8,7 +8,7 @@
 int main()
 {
     //How long to run the simulation
-    const int runLength = 2000000;
+    const int runLength = 200;
     bool status = false;
 
     //Initial conditions

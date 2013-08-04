@@ -17,10 +17,11 @@ class animal : public entity
     genome animalGenome;
 public:
     animal();
-    virtual void update();
+    void update();
     void update(entitySet collidingEntitySet);
     int compareGenomeWith(genome other);
-    bool fightWith();
+    void fight();
+    int eat() { }
 };
 
 #endif /*ANIMAL_H*/

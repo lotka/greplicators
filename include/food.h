@@ -6,12 +6,13 @@
 class food : public entity
 {
     genome theGenome;
-    int foodValue, maxFoodValue;
+    int foodValue, maxFoodValue, foodTransfer;
 public:
     food();
     void update();
     void update(entitySet collidingEntitySet);
-    int getFoodValue() { return maxFoodValue; }
+    int eat();
+    void fight() {  }
 };
 
 #endif /*FOOD_H*/
