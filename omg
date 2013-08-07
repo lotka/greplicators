@@ -1,0 +1,8 @@
+In file included from /usr/include/c++/4.6/bits/hashtable.h:35:0,
+                 from /usr/include/c++/4.6/unordered_map:45,
+                 from include/./genome.h:1,
+                 from src/genome.cpp:1:
+/usr/include/c++/4.6/bits/hashtable_policy.h: In member function ‘std::__detail::_Map_base<_Key, _Pair, std::_Select1st<_Pair>, true, _Hashtable>::mapped_type& std::__detail::_Map_base<_Key, _Pair, std::_Select1st<_Pair>, true, _Hashtable>::operator[](const _Key&) [with _Key = const char*, _Pair = std::pair<const char* const, int [2]>, _Hashtable = std::_Hashtable<const char*, std::pair<const char* const, int [2]>, std::allocator<std::pair<const char* const, int [2]> >, std::_Select1st<std::pair<const char* const, int [2]> >, std::equal_to<const char*>, std::hash<const char*>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, false, false, true>, std::__detail::_Map_base<_Key, _Pair, std::_Select1st<_Pair>, true, _Hashtable>::mapped_type = int [2]]’:
+src/genome.cpp:5:25:   instantiated from here
+/usr/include/c++/4.6/bits/hashtable_policy.h:549:24: error: conversion from ‘int’ to non-scalar type ‘std::__detail::_Map_base<const char*, std::pair<const char* const, int [2]>, std::_Select1st<std::pair<const char* const, int [2]> >, true, std::_Hashtable<const char*, std::pair<const char* const, int [2]>, std::allocator<std::pair<const char* const, int [2]> >, std::_Select1st<std::pair<const char* const, int [2]> >, std::equal_to<const char*>, std::hash<const char*>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, false, false, true> >::mapped_type {aka int [2]}’ requested
+make: *** [obj/genome.o] Error 1

@@ -8,6 +8,7 @@
 #   2010-11-05 - first version
 #   2011-08-10 - added structure : sources, objects, binaries
 #                thanks to http://stackoverflow.com/users/128940/beta
+#   2013-08-07   lotka adapted makefile for greplicators, (thanks yanick hope you don't mind)
 # ------------------------------------------------
 
 # project name (generate executable with this name)

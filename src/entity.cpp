@@ -53,10 +53,3 @@ position entity::getPosition()
 {
     return this->currentPosition;
 }
-
-
-
-genome::genome()
-{
-
-}
