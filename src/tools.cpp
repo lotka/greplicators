@@ -61,7 +61,7 @@ int getValueFromDistribution(int ID)
     static std::default_random_engine generator;
     static std::uniform_int_distribution<int> positionDistribution(0, SPACE_DIMENSIONS - 1);
     static std::uniform_int_distribution<int> binaryDistribution(0,1);
-    static std::uniform_int_distribution<int> genomeDistribution(0,100); //Not used yet
+    static std::uniform_int_distribution<int> genomeDistribution(0,10000);
     static std::uniform_int_distribution<int> animalDistribution(0,3);
     static std::uniform_int_distribution<int> worldPositionDistribution(-WORLD_SIZE,WORLD_SIZE);
 

@@ -1,4 +1,5 @@
 #include "food.h"
+#include "genome.h"
 #include <cmath>
  
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -7,9 +8,9 @@
 food::food()
 {
    type         =   2;
-   maxFoodValue = 1000;
+   maxFoodValue = theGenome.getGenotype(foodGenome::maxFoodValue);
    foodValue    = 100;
-   foodTransfer =  2000;
+   foodTransfer =  20;
    hp           = 100;
 }
 

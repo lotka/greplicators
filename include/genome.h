@@ -2,13 +2,16 @@
 #define GENOME_H
 
 #include <unordered_map>
-
+    typedef int allele;
 class genome
 {
  public:
-    typedef int allele;
 
-    typedef allele genotype[2];
+
+    typedef struct {
+      allele dominant;
+      allele recessive;
+    } genotype;
 
     typedef const char * genotypeName;
 
@@ -17,7 +20,7 @@ class genome
     genome combine(genome &a, genome &b);
 
     //Possibly allows for a risk of mutation whenever used
-    int getGenotype(genotypeName &requestedName); /* This should return a probability possibly */
+    allele getGenotype(genotypeName &requestedName); /* Returns the dominant allele */
 
  protected:
 
@@ -26,8 +29,8 @@ class genome
 
 class foodGenome : public genome
 {
-  static genotypeName maxFoodValue;
  public:
+  static genotypeName maxFoodValue;
   foodGenome();
 };
 
